@@ -22,22 +22,29 @@ class MainActivity : AppCompatActivity() {
 
 
         //methods
+        //Toast gravity is coded correctly,
+        //however Android 11 / Api 30
+        //The effect will *not* work
+        //https://developer.android.com/reference/kotlin/android/os/Build.VERSION_CODES.html#R:kotlin.Int
         trueBtn.setOnClickListener{view:View ->
-         Toast.makeText(
+            val toast = Toast.makeText(
              this,
              R.string.correct_toast,
              Toast.LENGTH_SHORT
-         ).show()
+         )
+            toast.setGravity(Gravity.TOP, 0, 0)
+            toast.show()
         }
+
         falseBtn.setOnClickListener{view:View ->
-        Toast.makeText(
+        val toast = Toast.makeText(
             this,
             R.string.incorrect_toast,
             Toast.LENGTH_SHORT
-        ).show()
+        )
+            toast.setGravity(Gravity.TOP, 0, 0)
+            toast.show()
         }
-
-
 
     }
 }
