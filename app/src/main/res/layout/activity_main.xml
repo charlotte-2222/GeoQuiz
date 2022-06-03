@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+
+
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_color_A"
     android:gravity="center"
     android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="110dp"
-        android:layout_height="103dp"
-        android:contentDescription="@string/app_name"
-        app:srcCompat="@drawable/clipart16901" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="24dp"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:text="@string/question_text" />
+        android:fontFamily="sans-serif-medium"
+        android:padding="25dp"
+        android:layout_marginBottom="20dp"
+        android:text="@string/question_text"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -29,19 +29,31 @@
 
         <Button
             android:id="@+id/true_button"
-            android:backgroundTint="@color/purple_200"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/true_button" />
+            android:backgroundTint="@color/purple_200"
+            android:text="@string/true_button"
+            android:layout_marginEnd="20dp"
+            />
 
         <Button
             android:id="@+id/false_button"
-            android:backgroundTint="@color/purple_200"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/false_button" />
+            android:backgroundTint="@color/purple_200"
+            android:text="@string/false_button"
+           />
 
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/world"
+        android:layout_width="103dp"
+        android:layout_height="154dp"
+        android:layout_marginTop="75dp"
+        android:maxWidth="176dp"
+        android:maxHeight="87dp"
+        android:src="@drawable/clipart16901" android:contentDescription="@string/app_name" />
 
 </LinearLayout>
 

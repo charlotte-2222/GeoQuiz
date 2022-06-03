@@ -1,3 +1,8 @@
+/*Charlotte Childers
+* CPT-188-Lab-2
+* 6-4-2022
+*/
+
 package com.example.charlotte_childers_cpt_188_lab_2
 
 import androidx.appcompat.app.AppCompatActivity
@@ -26,6 +31,7 @@ class MainActivity : AppCompatActivity() {
         //however Android 11 / Api 30
         //The effect will *not* work
         //https://developer.android.com/reference/kotlin/android/os/Build.VERSION_CODES.html#R:kotlin.Int
+
         trueBtn.setOnClickListener{view:View ->
             val toast = Toast.makeText(
              this,
