@@ -4,6 +4,7 @@
 
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_color_A"
@@ -20,7 +21,10 @@
         android:textColor="@color/white"
         android:textSize="18sp"
         android:id="@+id/question_text_view"
-        />
+        android:gravity="center"
+        tools:text="@string/question_sc"
+
+    />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -44,8 +48,15 @@
             android:text="@string/false_button"
            />
 
-    </LinearLayout>
 
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/next_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/next_button"
+        />
     <ImageView
         android:id="@+id/world"
         android:layout_width="103dp"
