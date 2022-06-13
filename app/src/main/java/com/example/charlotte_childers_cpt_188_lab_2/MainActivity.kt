@@ -1,17 +1,22 @@
 /*Charlotte Childers
-* CPT-188-Lab-2
-* 6-4-2022
+* CPT-188-Lab-3
+* 6-11-2022
+* --Updates to GeoQuiz applet
 */
 
 package com.example.charlotte_childers_cpt_188_lab_2
 
+import android.nfc.Tag
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Gravity
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+
+private const val TAG = "MainActivity"
 
 class MainActivity : AppCompatActivity() {
 
@@ -35,6 +40,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.d(TAG,"onCreate(Bundle?) called")
         setContentView(R.layout.activity_main)
 
         trueBtn=findViewById(R.id.true_button)
@@ -83,6 +89,31 @@ class MainActivity : AppCompatActivity() {
         //The effect will *not* work
         //https://developer.android.com/reference/kotlin/android/os/Build.VERSION_CODES.html#R:kotlin.Int
 
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.d(TAG,"onStart() called")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d(TAG, "onResume() called")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.d(TAG, "onPause() called")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d(TAG, "onStop() called")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d(TAG, "onDestroy() called")
     }
 
 }

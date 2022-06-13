@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_color_A"
-    android:gravity="center"
-    android:orientation="vertical"
-    tools:ignore="ExtraText">
-
+    android:background="@color/background_color_A">
 
     <TextView
         android:layout_width="wrap_content"
@@ -19,15 +14,15 @@
         android:textColor="@color/white"
         android:textSize="18sp"
         android:id="@+id/question_text_view"
-        android:gravity="center"
+        android:layout_gravity="center_horizontal"
         tools:text="@string/question_sc"
 
-    />
+        />
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_gravity="center_vertical|center_horizontal">
 
         <Button
             android:id="@+id/true_button"
@@ -44,7 +39,7 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/purple_200"
             android:text="@string/false_button"
-           />
+            />
 
 
 
@@ -55,9 +50,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/next_button"
+        android:layout_gravity="bottom|end"
         />
-        <!--android:drawableEnd="@drawable/arrow_right"-->
-        <!--android:drawablePadding="4dp"-->/>
 
     <ImageView
         android:id="@+id/world"
@@ -67,7 +61,4 @@
         android:maxWidth="176dp"
         android:maxHeight="87dp"
         android:src="@drawable/clipart16901" android:contentDescription="@string/app_name" />
-
-</LinearLayout>
-
-
+</FrameLayout>
