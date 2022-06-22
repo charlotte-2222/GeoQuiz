@@ -26,26 +26,18 @@ class MainActivity : AppCompatActivity() {
     private lateinit var nextButton: Button
     private lateinit var questionTextView: TextView
 
-    private val questionBank=listOf(
-        Question(R.string.question_sc, true),
-        Question(R.string.question_mideast, false),
-        Question(R.string.question_africa, false),
-        Question(R.string.question_americas, true),
-        Question(R.string.question_asia, true)
-    )
-
-    private var currentIndex=0
 
 
+    private val quizViewModel: QuizViewModel by lazy {
+        ViewModelProvider(this).get(QuizViewModel::class.java)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Log.d(TAG,"onCreate(Bundle?) called")
         setContentView(R.layout.activity_main)
 
-        val provider:ViewModelProvider=ViewModelProvider.of(this)
-        val quizViewModel=provider.get(QuizViewModel::class.java)
-        Log.d(TAG, "Got a QuizViewModel: $quizViewModel")
+
 
         trueBtn=findViewById(R.id.true_button)
         falseBtn=findViewById(R.id.false_button)
@@ -64,7 +56,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         nextButton.setOnClickListener{
-            currentIndex=(currentIndex+1)%questionBank.size
+            quizViewModel.moveToNext()
             updateQuestion()
         }
 
@@ -73,14 +65,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun updateQuestion(){
-        val questionTextResId=questionBank[currentIndex].textResId
-        questionTextView.setText(questionTextResId)
+        val questionTestResId=quizViewModel.currentQuestionText
+        questionTextView.setText(questionTestResId)
     }
 
     private fun checkAnswer(userAnswer:Boolean){
-        val correct=questionBank[currentIndex].answer
+        val correctAnswer=quizViewModel.currentQuestionAnswer
 
-        val messageResId=if(userAnswer==correct){
+        val messageResId=if(userAnswer==correctAnswer){
             R.string.correct_toast
         }else{
             R.string.incorrect_toast
