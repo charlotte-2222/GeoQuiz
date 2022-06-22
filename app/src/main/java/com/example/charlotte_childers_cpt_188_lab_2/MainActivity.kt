@@ -5,7 +5,7 @@
 */
 
 package com.example.charlotte_childers_cpt_188_lab_2
-
+//had to rebase 6/22/22 to get it to work
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
