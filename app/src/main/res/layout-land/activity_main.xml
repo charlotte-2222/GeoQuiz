@@ -51,6 +51,8 @@
         android:layout_height="wrap_content"
         android:text="@string/next_button"
         android:layout_gravity="bottom|end"
+        android:textColor="@color/teal_700"
+        android:backgroundTint="@color/white"
         />
 
     <ImageView

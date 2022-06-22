@@ -6,15 +6,15 @@
 
 package com.example.charlotte_childers_cpt_188_lab_2
 
-import android.nfc.Tag
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.Gravity
-import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
+
 
 private const val TAG = "MainActivity"
 
@@ -43,6 +43,10 @@ class MainActivity : AppCompatActivity() {
         Log.d(TAG,"onCreate(Bundle?) called")
         setContentView(R.layout.activity_main)
 
+        val provider:ViewModelProvider=ViewModelProvider.of(this)
+        val quizViewModel=provider.get(QuizViewModel::class.java)
+        Log.d(TAG, "Got a QuizViewModel: $quizViewModel")
+
         trueBtn=findViewById(R.id.true_button)
         falseBtn=findViewById(R.id.false_button)
         nextButton=findViewById(R.id.next_button)
@@ -51,11 +55,11 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        trueBtn.setOnClickListener{view:View ->
+        trueBtn.setOnClickListener{
             checkAnswer(true)
         }
 
-        falseBtn.setOnClickListener{view:View ->
+        falseBtn.setOnClickListener{
             checkAnswer(false)
         }
 
